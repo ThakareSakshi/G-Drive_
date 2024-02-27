@@ -41,7 +41,8 @@ const Sidebar = () => {
              timestamp: serverTimestamp(),
              filename: file.name,
              fileURL: downloadURL,
-             size: uploadTaskSnapshot.totalBytes
+             size: uploadTaskSnapshot.totalBytes,
+             starred:false
          });
  
          // Reset state
@@ -70,7 +71,7 @@ const Sidebar = () => {
     </div>
 
     </Modal>
-    <div className='w-1/6 flex flex-col item-center gap-4 px-2 justify-center bg-[#F8FAFD]'>
+    <div className='w-1/6 flex flex-col item-center gap-4 px-2 justify-center bg-[#F8FAFD] max-md:hidden'>
         <div className='shadow-lg rounded-full p-4 px-6 w-fit cursor-pointer' onClick={()=>setISOpen(true)}>
            <AddOutlinedIcon/>
             <span className='p-2'>New</span>

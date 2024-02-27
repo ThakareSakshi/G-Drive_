@@ -15,13 +15,13 @@ const Header = () => {
         <div className=' bg-[#E9EEF6] px-3 m-2 rounded-full p-1'>
             
             <i className="fa-solid fa-magnifying-glass"></i>
-            <input className='p-2 w-[550px] bg-[#E9EEF6] outline-none' placeholder='Search in Drive ...' type="text"/>
+            <input className='p-2 w-[550px] bg-[#E9EEF6] outline-none max-md:w-auto max-sm:hidden max-[910px]:w-[400px]' placeholder='Search in Drive ...' type="text"/>
             <i class="fa-solid fa-sliders"></i>
 
         </div>
        
       </div>
-      <div className='flex gap-4 items-center text-xl'>
+      <div className='flex gap-4 items-center text-xl max-md:hidden'>
         <HelpOutlineOutlinedIcon/>
         <SettingsOutlinedIcon/>
         <AppsOutlinedIcon/>
