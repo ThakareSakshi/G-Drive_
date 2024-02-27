@@ -1,16 +1,12 @@
 import Data from "./components/Data";
 import Header from "./components/Header";
+import Home from "./components/Pages/Home";
 import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <div className="">
-    <Header/>
-    <div className="w-full flex">
-      <Sidebar/>
-      <Data/>
-    </div>
-
+    <Home/>
     </div>
   );
 }
