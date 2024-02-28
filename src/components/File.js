@@ -3,6 +3,7 @@ import GradeIcon from "@mui/icons-material/Grade";
 import { doc, updateDoc, collection ,deleteDoc,addDoc} from "firebase/firestore";
 import { db } from "../firebase/Firebase";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { serverTimestamp
  } from "firebase/firestore";
 
@@ -73,28 +74,34 @@ const File = ({ file }) => {
   }
   return (
     <div
-      className="flex w-full justify-between p-4 border-b-[1px] border-gray-200 px-4"
+      className="grid grid-cols-5 w-full  p-4 border-b-[1px] border-gray-200 px-4"
       key={file.id}
     >
-      <p className="text-[13px] text-center flex items-center gap-1">
-        <div onClick={handleStarred}>
-          {file.data.starred ? (
-            <GradeIcon style={{ fontSize: "16px", color: "yellow" }} />
-          ) : (
-            <GradeIcon style={{ fontSize: "16px", color: "gray" }} />
-          )}
-        </div>
-        <a href={file.data.fileURL}>{file.data.filename}</a>
+      <p className="text-[15px] text-left flex items-center gap-1">
+        
+        <a href={file.data.fileURL} className="font-medium"><InsertDriveFileIcon style={{color:"#5591F5" ,marginRight:"10px"}}/>{file.data.filename}</a>
       </p>
-      <p className="text-[13px] text-center max-md:hidden">owner</p>
-      <p className="text-[13px] text-center max-md:hidden">
+      <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src="user.jpg" className="h-8"/>Me</p>
+      <p className="text-[15px] text-right max-md:hidden">
         {formatTimestamp(file.data.timestamp)}
       </p>
-      <p className="text-[13px] text-center flex items-center gap-2">{changeBytes(file.data.size)}
-        <div className="cursor-pointer" onClick={deleteFile}>
+      <p className="text-[15px] text-right">{changeBytes(file.data.size)}
+        
+      </p>
+
+      <div className="flex gap-2 justify-end">
+      <div onClick={handleStarred} className="">
+          {file.data.starred ? (
+            <GradeIcon style={{ fontSize: "20px", color: "gold" }} />
+          ) : (
+            <GradeIcon style={{ fontSize: "20px", color: "gray" }} />
+          )}
+        </div>
+      <div className="cursor-pointer text-right" onClick={deleteFile}>
+      
             <DeleteOutlineIcon />
         </div>
-      </p>
+      </div>
     </div>
   );
 };

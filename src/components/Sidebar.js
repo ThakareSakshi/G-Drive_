@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUploadOutlined';
 import DevicesOutlinedIcon from '@mui/icons-material/DevicesOutlined';
@@ -13,12 +13,17 @@ import { uploadBytesResumable,getDownloadURL, } from 'firebase/storage';
 import { collection,addDoc } from 'firebase/firestore';
 import { serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytes } from 'firebase/storage';
+import { FileCtx } from '../Context/FileContext';
+import MyDrive from '../Pages/MyDrive';
+import Starred from '../Pages/Starred';
+import Trash from '../Pages/Trash';
 // import firebase from "firebase"
 
 const Sidebar = () => {
     const [isOpen,setISOpen]=useState(false);
     const [uploading,setUploading]=useState(false);
-    const [file,setFile]=useState(null)
+    const [file,setFile]=useState(null);
+    const ctx=useContext(FileCtx);
 
     const handleFile=(e)=>{
       if(e.target.files[0]){
@@ -71,34 +76,34 @@ const Sidebar = () => {
     </div>
 
     </Modal>
-    <div className='w-1/6 flex flex-col item-center gap-4 px-2 justify-center bg-[#F8FAFD] max-md:hidden'>
+    <div className='w-1/6 flex flex-col item-center gap-2 px-2 justify-start bg-[#F8FAFD] max-md:hidden h-screen '>
         <div className='shadow-lg rounded-full p-4 px-6 w-fit cursor-pointer' onClick={()=>setISOpen(true)}>
            <AddOutlinedIcon/>
             <span className='p-2'>New</span>
         </div>
-        <div className='flex gap-4 items-center px-2 cursor-pointer'>
+        <div className='flex gap-4 items-center px-2 cursor-pointer hover:bg-blue-400 hover:rounded-full py-2'>
             <DriveFolderUploadOutlinedIcon/>
-            <span className='text-sm text-[#1f1f1f]'>My Drive</span>
+            <span className='text-sm text-[#1f1f1f] ' onClick={()=>{ctx.setCurrentPage(<MyDrive/>)}}>My Drive</span>
         </div>
-        <div className='flex gap-4 items-center px-2 cursor-pointer'>
+        <div className='flex gap-4 items-center p-2 cursor-pointer hover:bg-blue-400 hover:rounded-full'>
             <DevicesOutlinedIcon/>
             <span className='text-sm text-[#1f1f1f]'>Computers</span>
         </div>
-        <div className='flex gap-4 items-center px-2 cursor-pointer'>
+        <div className='flex gap-4 items-center p-2 cursor-pointer hover:bg-blue-400 hover:rounded-full'>
             <GroupOutlinedIcon/>
             <span className='text-sm text-[#1f1f1f]'>Shared with Me</span>
         </div>
-        <div className='flex gap-4 items-center px-2 cursor-pointer'>
+        <div className='flex gap-4 items-center p-2 cursor-pointer hover:bg-blue-400 hover:rounded-full'>
             <ScheduleOutlinedIcon/>
             <span className='text-sm text-[#1f1f1f]'>Recent</span>
         </div>
-        <div className='flex gap-4 items-center px-2 cursor-pointer'>
+        <div className='flex gap-4 items-center p-2 cursor-pointer hover:bg-blue-400 hover:rounded-full'>
             <StarBorderOutlinedIcon/>
-            <span className='text-sm text-[#1f1f1f]'>Starred</span>
+            <span className='text-sm text-[#1f1f1f]' onClick={()=>{ctx.setCurrentPage(<Starred/>)}}>Starred</span>
         </div>
-        <div className='flex gap-4 items-center px-2 cursor-pointer'>
+        <div className='flex gap-4 items-center p-2 cursor-pointer hover:bg-blue-400 hover:rounded-full'>
             <DeleteOutlineOutlinedIcon/>
-            <span className='text-sm text-[#1f1f1f]'>Trash</span>
+            <span className='text-sm text-[#1f1f1f]' onClick={()=>{ctx.setCurrentPage(<Trash/>)}}>Trash</span>
         </div>
         <hr/>
         <div className='flex gap-4 items-center px-2'>

@@ -1,13 +1,16 @@
 import Data from "./components/Data";
 import Header from "./components/Header";
-import Home from "./components/Pages/Home";
+import Home from "./Pages/Home";
 import Sidebar from "./components/Sidebar";
+import FileContext from "./Context/FileContext";
 
 function App() {
   return (
-    <div className="">
+   <FileContext>
+     <div className="">
     <Home/>
     </div>
+   </FileContext>
   );
 }
 
