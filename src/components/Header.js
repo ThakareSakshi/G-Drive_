@@ -3,9 +3,9 @@ import searchIcon from "@mui/icons-material/Search"
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import { AppBar } from '@mui/material'
 
-const Header = () => {
+
+const Header = ({profile}) => {
   return (
     <div className='flex items-center  px-4 justify-between bg-[#F8FAFD]'>
      <div className='flex items-center'> <img src="https://download.logo.wine/logo/Google_Drive/Google_Drive-Logo.wine.png" className='h-10' />
@@ -26,6 +26,7 @@ const Header = () => {
         <SettingsOutlinedIcon/>
         <AppsOutlinedIcon/>
         <i className="fa-solid fa-user cursor-pointer"></i>
+        <img src={profile}/>
 
       </div>
     </div>

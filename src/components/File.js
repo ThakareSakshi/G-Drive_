@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import GradeIcon from "@mui/icons-material/Grade";
 import { doc, updateDoc, collection ,deleteDoc,addDoc} from "firebase/firestore";
 import { db } from "../firebase/Firebase";
@@ -6,8 +6,11 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { serverTimestamp
  } from "firebase/firestore";
+import { FileCtx } from "../Context/FileContext";
 
 const File = ({ file }) => {
+
+  const ctx=useContext(FileCtx);
 
   const handleStarred = async () => {
     const docRef = doc(db, "myfiles", file.id); // Assuming "myfiles" is the collection name
@@ -81,7 +84,7 @@ const File = ({ file }) => {
         
         <a href={file.data.fileURL} className="font-medium"><InsertDriveFileIcon style={{color:"#5591F5" ,marginRight:"10px"}}/>{file.data.filename}</a>
       </p>
-      <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src="user.jpg" className="h-8"/>Me</p>
+      <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src={ctx.photo} className="h-8"/>Me</p>
       <p className="text-[15px] text-right max-md:hidden">
         {formatTimestamp(file.data.timestamp)}
       </p>
