@@ -8,7 +8,7 @@ import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import CloudQueueOutlinedIcon from '@mui/icons-material/CloudQueueOutlined';
 import { Modal } from '@mui/material';
-import {db, firestore, storage} from "../Firebase/Firebase";
+import {db, firestore, storage} from "../fireData/Firebase";
 import { uploadBytesResumable,getDownloadURL, } from 'firebase/storage';
 import { collection,addDoc } from 'firebase/firestore';
 import { serverTimestamp } from 'firebase/firestore';

@@ -1,7 +1,7 @@
 import React from 'react'
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { db } from '../Firebase/Firebase';
+import { db } from '../fireData/Firebase';
 import { useState,useEffect } from 'react';
 import { onSnapshot,collection } from 'firebase/firestore';
 import TrashedFiles from '../components/TrashedFiles';

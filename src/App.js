@@ -1,4 +1,4 @@
-import { provider } from "./Firebase/Firebase";
+import { provider } from "./fireData/Firebase";
 import { signInWithPopup,getAuth } from "firebase/auth";
 import Home from "./Pages/Home";
 
