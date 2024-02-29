@@ -4,6 +4,13 @@ The G-Drive  project, developed with React and Firebase, offers users a familiar
 
 hosted link :https://g-drive-9eh5.vercel.app/
 
+## Technologies used :
+- ReactJS
+- Firebase Storage
+- Tailwind CSS
+  
+## UI :
+
 
 # Getting Started with Create React App
 
