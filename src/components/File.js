@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import GradeIcon from "@mui/icons-material/Grade";
 import { doc, updateDoc, collection ,deleteDoc,addDoc} from "firebase/firestore";
-import { db } from "../firebase/Firebase";
+import { db } from "../Firebase/Firebase";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { serverTimestamp

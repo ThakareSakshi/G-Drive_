@@ -1,9 +1,9 @@
 import { signInWithPopup,getAuth } from "firebase/auth";
 import Home from "./Pages/Home";
-import { provider } from "./firebase/Firebase";
-import FileContext, { FileCtx } from "./Context/FileContext";
+import { provider } from "./Firebase/Firebase";
+import  { FileCtx } from "./Context/FileContext";
 import Autheticate from "./Pages/Autheticate";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 function App() {
   const ctx=useContext(FileCtx);

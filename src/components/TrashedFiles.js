@@ -1,6 +1,6 @@
 
 import { doc, collection ,deleteDoc,addDoc} from "firebase/firestore";
-import { db } from "../firebase/Firebase";
+import { db } from "../Firebase/Firebase";
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { serverTimestamp
  } from "firebase/firestore";
