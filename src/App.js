@@ -1,6 +1,7 @@
+import { provider } from "./Firebase/Firebase";
 import { signInWithPopup,getAuth } from "firebase/auth";
 import Home from "./Pages/Home";
-import { provider } from "./Firebase/Firebase";
+
 import  { FileCtx } from "./Context/FileContext";
 import Autheticate from "./Pages/Autheticate";
 import { useContext, useState } from "react";
