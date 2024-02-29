@@ -8,14 +8,13 @@ export const FileCtx=createContext();
 
 const FileContext = (props) => {
     const [currentPage,setCurrentPage]=useState(<MyDrive/>)
-    const [photo,setphoto]=useState("user.jpg");
+    const [photo , setPhoto]=useState("user.jpg");
 
     const data={
- currentPage,
- setCurrentPage,
- setphoto,
- photo
-    }
+      currentPage,
+      setCurrentPage,
+      photo, 
+      setPhoto }
   return (
    <FileCtx.Provider value={data}>
     {props.children}

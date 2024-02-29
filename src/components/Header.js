@@ -25,8 +25,8 @@ const Header = ({profile}) => {
         <HelpOutlineOutlinedIcon/>
         <SettingsOutlinedIcon/>
         <AppsOutlinedIcon/>
-        <i className="fa-solid fa-user cursor-pointer"></i>
-        <img src={profile}/>
+        {/* <i className="fa-solid fa-user cursor-pointer"></i> */}
+        <img src={profile} className='h-10 rounded-full'/>
 
       </div>
     </div>
