@@ -7,13 +7,14 @@ import { useContext, useEffect, useState } from "react";
 
 function App() {
   const ctx=useContext(FileCtx);
-  const [users, setUser] = useState(null);
+  const [users, setUser] = useState(JSON.parse(localStorage.getItem("user"))  ||null);
   const auth=getAuth();
  
   const signIn = () => {
     signInWithPopup(auth, provider)
             .then(({ user }) => {
               setUser(user);
+              localStorage.setItem("user",JSON.stringify(user));
               console.log(user);
               
             })

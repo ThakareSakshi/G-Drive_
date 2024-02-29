@@ -86,7 +86,8 @@ const File = ({ file }) => {
       </p>
       <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src={ctx.photo} className="h-8"/>Me</p>
       <p className="text-[15px] text-right max-md:hidden">
-        {formatTimestamp(file.data.timestamp)}
+        {file.data.timestamp? formatTimestamp(file.data.timestamp):null}
+       
       </p>
       <p className="text-[15px] text-right">{changeBytes(file.data.size)}
         
