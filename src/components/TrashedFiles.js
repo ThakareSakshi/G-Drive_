@@ -5,9 +5,13 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { serverTimestamp
  } from "firebase/firestore";
  import RestoreIcon from '@mui/icons-material/Restore';
+import { useContext } from "react";
+import FileContext, { FileCtx } from "../Context/FileContext";
 
 
 const TrashedFiles = ({file}) => {
+
+  const ctx=useContext(FileCtx);
 
     async function restoreFile() {
 
@@ -69,7 +73,7 @@ const TrashedFiles = ({file}) => {
     
         <a href={file.data.fileURL}><InsertDriveFileIcon style={{color:"#5591F5" ,marginRight:"10px"}}/>{file.data.filename}</a>
       </p>
-      <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src="user.jpg" className="h-8"/>Me</p>
+      <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src={ctx.photo} className="h-6 mr-2 rounded-full"/>Me</p>
       <p className="text-[15px] text-right max-md:hidden"> {formatTimestamp(file.data.timestamp)} </p>
       <p className="text-[15px] text-right">{changeBytes(file.data.size)} </p>
       <span className="cursor-pointer text-right hover:text-purple-800" onClick={restoreFile}>

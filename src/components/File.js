@@ -82,9 +82,9 @@ const File = ({ file }) => {
     >
       <p className="text-[15px] text-left flex items-center gap-1">
         
-        <a href={file.data.fileURL} className="font-medium"><InsertDriveFileIcon style={{color:"#5591F5" ,marginRight:"10px"}}/>{file.data.filename}</a>
+        <a href={file.data.fileURL} className=""><InsertDriveFileIcon style={{color:"#5591F5" ,marginRight:"10px"}}/>{file.data.filename}</a>
       </p>
-      <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src={ctx.photo} className="h-8"/>Me</p>
+      <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src={ctx.photo} className="h-6 mr-2 rounded-full"/>Me</p>
       <p className="text-[15px] text-right max-md:hidden">
         {file.data.timestamp? formatTimestamp(file.data.timestamp):null}
        
@@ -103,7 +103,7 @@ const File = ({ file }) => {
         </div>
       <div className="cursor-pointer text-right" onClick={deleteFile}>
       
-            <DeleteOutlineIcon />
+            <DeleteOutlineIcon style={{color:"gray"}}/>
         </div>
       </div>
     </div>

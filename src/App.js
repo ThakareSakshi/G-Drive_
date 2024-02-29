@@ -16,6 +16,7 @@ function App() {
               setUser(user);
               localStorage.setItem("user",JSON.stringify(user));
               console.log(user);
+              ctx.setPhoto(user.photoURL);
               
             })
             .catch(err => alert(err))
@@ -23,14 +24,14 @@ function App() {
 
 
   return (
-   <FileContext>
+   
      <div className="">
     
    {
     users ?( <Home profile={users.photoURL}/>): <Autheticate signin={signIn}/>
    }
     </div>
-   </FileContext>
+ 
   );
 }
 
