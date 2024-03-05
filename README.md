@@ -1,3 +1,17 @@
+# G-Drive 
+
+The G-Drive  project, developed with React and Firebase, offers users a familiar interface for storing and managing files in the cloud. With Firebase Authentication, users can securely log in and access their files from any device, while Firebase Storage enables seamless upload, storage, and retrieval of files. The application's intuitive design and collaborative features make it a versatile solution for individuals and teams alike.
+
+hosted link :https://g-drive-9eh5.vercel.app/
+
+## Technologies used :
+- ReactJS
+- Firebase Storage
+- Tailwind CSS
+  
+## UI :
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
