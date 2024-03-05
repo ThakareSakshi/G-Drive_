@@ -9,6 +9,7 @@ export const FileCtx=createContext();
 const FileContext = (props) => {
     const [currentPage,setCurrentPage]=useState(<MyDrive/>)
     const [photo,setPhoto]=useState("user.jpg");
+
    
 
     const data={

@@ -7,6 +7,7 @@ import { serverTimestamp
  import RestoreIcon from '@mui/icons-material/Restore';
 import { useContext } from "react";
 import FileContext, { FileCtx } from "../Context/FileContext";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
 const TrashedFiles = ({file}) => {
@@ -66,7 +67,7 @@ const TrashedFiles = ({file}) => {
       }
   return (
     <div
-      className="grid grid-cols-5 w-full justify-between p-4 border-b-[1px] border-gray-200 px-4"
+      className=" group grid grid-cols-5 w-full justify-between p-4 border-b-[1px] border-gray-200 px-4"
       key={file.id}
     >
       <p className="text-[15px] text-left flex items-center gap-1">
@@ -76,8 +77,11 @@ const TrashedFiles = ({file}) => {
       <p className="text-[15px] text-right max-md:hidden flex items-center justify-end"><img src={ctx.photo} className="h-6 mr-2 rounded-full"/>Me</p>
       <p className="text-[15px] text-right max-md:hidden"> {formatTimestamp(file.data.timestamp)} </p>
       <p className="text-[15px] text-right">{changeBytes(file.data.size)} </p>
-      <span className="cursor-pointer text-right hover:text-purple-800" onClick={restoreFile}>
-            <RestoreIcon/>
+      <span className="cursor-pointer text-right hover:text-purple-800 flex items-center justify-end" onClick={restoreFile}>
+           <div className="group-hover:block hidden">
+           <RestoreIcon/>
+           </div>
+           <MoreVertIcon/>
         </span>
       
     </div>

@@ -67,7 +67,7 @@ const Sidebar = () => {
         <div className='w-full p-4 uppercase rounded-md cursor-pointer mt-2'>
             <form onSubmit={handleUpload}>
               {
-                uploading ? <div className='text-center capitalize'>uploading ...</div>:
+                uploading ? <div className='text-center capitalize bg-green-700 text-white p-3'>uploading ...</div>:
                 <><input type='file' className='p-5 block mt-2' onChange={handleFile}/>
                 <button type='submit' className='p-2 bg-fuchsia-900 text-white px-4 rounded-full w-full'>Upload</button></>
               }
@@ -99,7 +99,7 @@ const Sidebar = () => {
         </div>
         <div className='flex gap-4 items-center p-2 cursor-pointer hover:bg-blue-400 hover:rounded-full'>
             <StarBorderOutlinedIcon/>
-            <span className='text-sm text-[#1f1f1f]' onClick={()=>{ctx.setCurrentPage(<Starred/>)}}>Starred</span>
+            <span className='text-sm text-[#1f1f1f]' onClick={()=>{ctx.setCurrentPage(<Starred/>) }}>Starred</span>
         </div>
         <div className='flex gap-4 items-center p-2 cursor-pointer hover:bg-blue-400 hover:rounded-full'>
             <DeleteOutlineOutlinedIcon/>

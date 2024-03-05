@@ -6,6 +6,8 @@ import { useState,useEffect } from 'react';
 import { onSnapshot,collection } from 'firebase/firestore';
 import TrashedFiles from '../components/TrashedFiles';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import TableHeader from '../components/TableHeader';
+import FileCard from '../components/FileCard';
 
 const Trash = () => {
 
@@ -36,15 +38,10 @@ const [files,setFiles]=useState([]);
    <>
    {
     files.length >0 ?<>
-      <div className='flex'>
+      <div className='flex flex-wrap'>
         {
           files.map(file=>{
-            return <a href={file.data.fileURL} key={file.id}>
-              <div className='border-2  w-fit rounded-lg m-4 max-w-40' >
-            <div className='px-10 py-4'> <InsertDriveFileIcon style={{fontSize:"50px", color:"gray"}}/></div>
-            <div className='bg-gray-100 w-full text-center p-2 text-gray-800'>{file.data.filename}</div>
-        </div>
-            </a>
+            return <FileCard key={file.id} file={file}/>
           })
         }
 
@@ -52,16 +49,10 @@ const [files,setFiles]=useState([]);
       </div>
     
       <div>
-        <div className='grid grid-cols-5 w-full p-2 border-b-2 border-gray-200 px-4'>
-            <p  className='text-sm font-medium text-left '>Name <ArrowDownwardIcon/></p>
-            <p className='text-sm font-medium text-right max-md:hidden'>Owner</p>
-            <p className='text-sm font-medium text-right max-md:hidden'>Deleted At</p>
-            <p className='text-sm font-medium text-right'>Size</p>
-            <p className='text-sm font-medium text-right'>Action</p>
-        </div>
+      <TableHeader/>
         {
          files.map(file=>{
-            return <TrashedFiles file={file}/>
+            return <TrashedFiles  key={file.id} file={file}/>
         
           })
         }
